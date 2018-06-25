@@ -1,16 +1,32 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.6.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "world-map-info",
+  "version": "0.0.1",
+  "description": "World map with countries info and weather data",
   "repository": {
     "type": "git",
-    "url": "git://github.com/react-boilerplate/react-boilerplate.git"
+    "url": "git://github.com/paratagas/paratagas-github-io.git"
   },
+  "author": {
+    "name": "Evgeni Sviridenko",
+    "email": "paratagas@gmail.com",
+    "url": "https://github.com/paratagas"
+  },
+  "homepage": "https://paratagas.github.io/",
+  "tags": [
+    "javascript",
+    "es6",
+    "react",
+    "redux",
+    "webpack",
+    "Google maps",
+    "world map",
+    "weather",
+    "highcharts"
+  ],
   "engines": {
     "npm": ">=5",
     "node": ">=8"
   },
-  "author": "Max Stoiber",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
@@ -45,7 +61,8 @@
     "test": "cross-env NODE_ENV=test jest --coverage",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "prettify": "prettier --write"
+    "prettify": "prettier --write",
+    "deploy": "bash ./scripts/deploy.sh"
   },
   "lint-staged": {
     "*.js": [
@@ -145,11 +162,14 @@
   },
   "dependencies": {
     "babel-polyfill": "6.26.0",
+    "bootstrap": "^4.1.1",
+    "bootswatch": "^4.1.1",
     "chalk": "^2.4.1",
     "compression": "1.7.2",
     "cross-env": "5.2.0",
     "express": "4.16.3",
     "fontfaceobserver": "2.0.13",
+    "google-map-react": "^1.0.4",
     "history": "4.7.2",
     "hoist-non-react-statics": "2.5.5",
     "immutable": "3.8.2",
@@ -160,6 +180,7 @@
     "minimist": "1.2.0",
     "prop-types": "15.6.1",
     "react": "16.4.1",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "16.4.1",
     "react-helmet": "5.2.0",
     "react-intl": "2.4.0",
