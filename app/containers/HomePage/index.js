@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style,arrow-body-style */
 /*
  * HomePage
  *
@@ -9,27 +10,88 @@
  * the linting exception.
  */
 
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import GoogleMapReact from 'google-map-react';
-import messages from './messages';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import Spinner from "react-svg-spinner";
+import { createStructuredSelector } from 'reselect/es';
+import 'bootswatch/dist/litera/bootstrap.css';
+import { PageTemplate } from '../PageTemplate';
+import GoogleMap from '../../components/GoogleMap';
+import { REST_COUNTRIES_URL } from '../../config/api';
+import injectReducer from '../../utils/injectReducer';
+import homePageReducer from './reducer';
+// import { getAllCountries } from './selectors';
+import { saveCountriesToStore } from './actions';
+import './index.scss';
 
 /* eslint-disable react/prefer-stateless-function */
-export default class HomePage extends React.PureComponent {
+class HomePage extends PureComponent {
+  constructor() {
+    super();
+    this.state = {
+      countries: [],
+      loading: false,
+    };
+  }
+
+  componentWillMount() {
+    this.setState({loading: true});
+    fetch(REST_COUNTRIES_URL)
+      .then((resp) => resp.json())
+      .then((data) => {
+        this.props.saveCountriesToStore(data);
+        this.setState({ countries: data, loading: false });
+      });
+  }
   render() {
+    const { countries, loading } = this.state;
+    let mainContent;
+    if (loading) {
+      mainContent =
+        <div id="center">
+          <Spinner className="spinner" height="128px" width="128px" color="fuchsia" thickness={5} gap={3} speed="slow" />;
+        </div>
+    } else {
+      mainContent = <GoogleMap countries={countries} />;
+      // console.log('countries');
+      // console.log(countries);
+    }
     return (
-      <div style={{ width: '100%', height: '600px' }}>
-        <GoogleMapReact
-          defaultCenter={{ lat: 53.9, lng: 27.57 }}
-          defaultZoom={12}
-          bootstrapURLKeys={{ key: 'AIzaSyAYQLiTtqvwt-Rew3Pb4Xm6XrV5sGZIg0U' }}
-        />
-      </div>
+      <PageTemplate>
+        {mainContent}
+      </PageTemplate>
     );
-    /* return (
-      <h1>
-        <FormattedMessage {...messages.header} />
-      </h1>
-    ); */
   }
 }
+
+HomePage.propTypes = {
+  countries: PropTypes.array,
+  saveCountriesToStore: PropTypes.func,
+};
+
+/* const mapStateToProps = createStructuredSelector({
+  countries: getAllCountries(),
+}); */
+
+/* const mapStateToProps = (state, ownProps) => {
+  return {
+    countries: state.countries,
+  };
+}; */
+
+function mapDispatchToProps(dispatch) {
+  return {
+    saveCountriesToStore: (countries) => dispatch(saveCountriesToStore(countries)),
+    dispatch,
+  };
+}
+
+const withConnect = connect(null, mapDispatchToProps);
+const withReducer = injectReducer({ key: 'countries', reducer: homePageReducer });
+
+export default compose(
+  withReducer,
+  withConnect,
+)(HomePage);

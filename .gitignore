@@ -10,4 +10,4 @@ npm-debug.log
 .idea
 
 # Private config
-app/**/api.js
+app/config/api.js

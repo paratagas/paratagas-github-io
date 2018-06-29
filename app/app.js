@@ -41,6 +41,12 @@ const initialState = {};
 const history = createHistory();
 const store = configureStore(initialState, history);
 const MOUNT_NODE = document.getElementById('app');
+window.store = store;
+store.subscribe(() => {
+  // console.log('STORE:');
+  // console.log(store.getState());
+  // localStorage['world-info-map-store'] = JSON.stringify(store.getState());
+});
 
 const render = messages => {
   ReactDOM.render(

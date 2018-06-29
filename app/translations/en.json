@@ -1,1 +1,8 @@
-[]
+{
+  "app.components.About.header": "About page",
+  "app.components.Contact.header": "Contact page",
+  "app.components.HomePage.header": "This is HomePage component!",
+  "app.components.MainMenu.aboutUrl": "About",
+  "app.components.MainMenu.contactUrl": "Contact",
+  "app.components.NotFoundPage.header": "This is NotFoundPage component!"
+}

@@ -1,0 +1,8 @@
+{
+  "app.components.About.header": "О проекте",
+  "app.components.Contact.header": "Контакты",
+  "app.components.HomePage.header": "Домашняя страница",
+  "app.components.MainMenu.aboutUrl": "О проекте",
+  "app.components.MainMenu.contactUrl": "Контакты",
+  "app.components.NotFoundPage.header": "Страница не найдена"
+}
