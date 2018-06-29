@@ -1,7 +1,8 @@
 /*
  * API keys
  */
-export const GOOGLE_MAPS_KEY = 'AIzaSyAi0oVNVO-e603aUY8SILdD4v9bVBkmiTg';
+// export const GOOGLE_MAPS_KEY = 'AIzaSyAi0oVNVO-e603aUY8SILdD4v9bVBkmiTg';
+export const GOOGLE_MAPS_KEY = 'AIzaSyAYQLiTtqvwt-Rew3Pb4Xm6XrV5sGZIg0U';
 export const OPEN_WEATHER_KEY = 'b1b35bba8b434a28a0be2a3e1071ae5b';
 
 /*
