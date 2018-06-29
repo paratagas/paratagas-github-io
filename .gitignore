@@ -9,5 +9,3 @@ stats.json
 npm-debug.log
 .idea
 
-# Private config
-app/config/api.js
