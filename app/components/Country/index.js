@@ -1,5 +1,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { FormattedMessage } from 'react-intl';
+import messages from './messages';
+import './index.scss';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class Country extends PureComponent {
@@ -7,13 +10,22 @@ export default class Country extends PureComponent {
     super(props);
   }
   render() {
-    const { text } = this.props;
+    const { country } = this.props;
     return (
-      <h3> { text } </h3>
+      <div className="country-item">
+        <ul className="list-group">
+          <li className="list-group-item active">{ country.name }</li>
+          <li className="list-group-item list-group-item-info">
+            <FormattedMessage {...messages.population} />
+            <br />
+            { country.population }
+          </li>
+        </ul>
+      </div>
     );
   };
 }
 
 Country.propTypes = {
-  text: PropTypes.string,
+  country: PropTypes.object,
 };

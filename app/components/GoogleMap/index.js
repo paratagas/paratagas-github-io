@@ -27,8 +27,8 @@ export default class GoogleMap extends PureComponent {
   render() {
     const mapHeight = document.documentElement.clientHeight - this.navPanelHeight;
     const { countries } = this.props;
-    console.log('countries');
-    console.log(countries);
+    // console.log('countries');
+    // console.log(countries);
     return (
       <div
         id="map-container"
@@ -44,7 +44,7 @@ export default class GoogleMap extends PureComponent {
               key={index}
               lat={country.latlng[0]}
               lng={country.latlng[1]}
-              text={country.name}
+              country={country}
             />
           )}
         </GoogleMapReact>
