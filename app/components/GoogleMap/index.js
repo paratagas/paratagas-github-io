@@ -40,6 +40,8 @@ export default class GoogleMap extends PureComponent {
           bootstrapURLKeys={{ key: GOOGLE_MAPS_KEY }}
         >
           {countries.map((country, index) =>
+            country.latlng[0] &&
+            country.latlng[1] &&
             <Country
               key={index}
               lat={country.latlng[0]}
