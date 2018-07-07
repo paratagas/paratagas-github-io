@@ -6,8 +6,12 @@
 import { defineMessages } from 'react-intl';
 
 export default defineMessages({
-  header: {
-    id: 'app.components.Contact.header',
-    defaultMessage: 'Contact page',
+  authorName: {
+    id: 'app.components.Contact.authorName',
+    defaultMessage: 'Evgeni Sviridenko',
+  },
+  sendEmail: {
+    id: 'app.components.Contact.sendEmail',
+    defaultMessage: 'Send email',
   },
 });

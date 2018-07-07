@@ -1,7 +1,7 @@
 {
-  "name": "world-map-info",
+  "name": "map-walker",
   "version": "0.0.1",
-  "description": "World map with countries info and weather data",
+  "description": "Map walker contains world map with countries info and weather data",
   "repository": {
     "type": "git",
     "url": "git://github.com/paratagas/paratagas-github-io.git"

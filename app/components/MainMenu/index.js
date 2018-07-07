@@ -13,7 +13,7 @@ export default class MainMenu extends PureComponent {
         <ul className="nav nav-pills nav-justified">
           <li className="nav-item">
             <NavLink className="nav-link" to="/home">
-              <HomeIcon size={25} />
+              <HomeIcon size={30} />
             </NavLink>
           </li>
           <li className="nav-item">

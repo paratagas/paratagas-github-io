@@ -3,6 +3,8 @@ coverage
 build
 node_modules
 stats.json
+google6791230e8966e716.html
+app/config/api.js
 
 # Cruft
 .DS_Store

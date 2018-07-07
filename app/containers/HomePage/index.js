@@ -15,14 +15,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import Spinner from "react-svg-spinner";
-import { createStructuredSelector } from 'reselect/es';
 import 'bootswatch/dist/litera/bootstrap.css';
 import { PageTemplate } from '../PageTemplate';
 import GoogleMap from '../../components/GoogleMap';
 import { REST_COUNTRIES_URL } from '../../config/api';
 import injectReducer from '../../utils/injectReducer';
 import homePageReducer from './reducer';
-// import { getAllCountries } from './selectors';
 import { saveCountriesToStore } from './actions';
 import './index.scss';
 
@@ -70,16 +68,6 @@ HomePage.propTypes = {
   countries: PropTypes.array,
   saveCountriesToStore: PropTypes.func,
 };
-
-/* const mapStateToProps = createStructuredSelector({
-  countries: getAllCountries(),
-}); */
-
-/* const mapStateToProps = (state, ownProps) => {
-  return {
-    countries: state.countries,
-  };
-}; */
 
 function mapDispatchToProps(dispatch) {
   return {

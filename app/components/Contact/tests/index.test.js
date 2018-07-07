@@ -1,6 +1,6 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import { shallow } from 'enzyme';
+import { FormattedMessage } from 'react-intl';
 
 import { Contact } from '../index';
 import messages from '../messages';
@@ -11,7 +11,7 @@ describe('<Contact />', () => {
     /* eslint-disable */
     expect(
       renderedComponent.contains(
-        <FormattedMessage {...messages.header} />
+        <FormattedMessage {...messages.authorName} />
       )
     ).toEqual(true);
     /* eslint-enable */

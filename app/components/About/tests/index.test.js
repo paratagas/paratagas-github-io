@@ -11,7 +11,7 @@ describe('<About />', () => {
     /* eslint-disable */
     expect(
       renderedComponent.contains(
-        <FormattedMessage {...messages.header} />
+        <FormattedMessage {...messages.leadText} />
       )
     ).toEqual(true);
     /* eslint-enable */

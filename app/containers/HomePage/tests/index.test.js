@@ -1,12 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import HomePage from '../index';
-import GoogleMap from '../../../components/GoogleMap';
+import { PageTemplate } from '../../PageTemplate';
 
 describe('<HomePage />', () => {
-  it('should render the GoogleMap component', () => {
-    const renderedComponent = shallow(<HomePage />);
-    expect(renderedComponent.contains(<GoogleMap />)).toEqual(true);
+  it('renders its children', () => {
+    const children = 'Test text';
+    const renderedComponent = shallow(<PageTemplate>{children}</PageTemplate>);
+    expect(renderedComponent.contains(children)).toEqual(true);
   });
 });
