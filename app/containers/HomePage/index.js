@@ -49,7 +49,7 @@ class HomePage extends PureComponent {
     if (loading) {
       mainContent =
         <div id="center">
-          <Spinner className="spinner" height="128px" width="128px" color="fuchsia" thickness={5} gap={3} speed="slow" />;
+          <Spinner className="spinner" height="128px" width="128px" color="fuchsia" thickness={5} gap={3} speed="slow" />
         </div>
     } else {
       mainContent = <GoogleMap countries={countries} />;
